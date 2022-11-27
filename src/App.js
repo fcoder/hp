@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+// Add extension by 
+// (1) Select the Extension Icon, Search for es7 snippets
+// (2) Then download then install ES7 React/Redux/GraphQL/React-Native snippet
+// (3) Now my VSCode can have the following feature, by typing rafce, to genereate a compoment template
+//     rafce:  React Arrow Function Export Component
 
-function App() {
+
+
+import React from 'react'
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <h1>GPT-2</h1>
+  )
 }
 
-export default App;
+export default App
