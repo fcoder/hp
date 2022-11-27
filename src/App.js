@@ -4,13 +4,27 @@
 // (3) Now my VSCode can have the following feature, by typing rafce, to genereate a compoment template
 //     rafce:  React Arrow Function Export Component
 
-
-
 import React from 'react'
+
+// We can do the following two lines for import becuse we have defined index.js under both compoments and containers
+import { Footer, Blog, Possibility, Features, WhatGPT3, Header } from './containers'
+import { CTA, Brand, Navbar } from './components'
 
 const App = () => {
   return (
-    <h1>GPT-2</h1>
+    <div className="App">
+      <div className="gradient__bg">
+        <Navbar />
+        <Header />
+      </div>
+      <Brand />
+      <WhatGPT3 />
+      <Features />
+      <Possibility />
+      <CTA />
+      <Blog />
+      <Footer />
+    </div>
   )
 }
 
