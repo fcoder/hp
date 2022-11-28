@@ -9,6 +9,7 @@ import React from 'react'
 // We can do the following two lines for import becuse we have defined index.js under both compoments and containers
 import { Footer, Blog, Possibility, Features, WhatGPT3, Header } from './containers'
 import { CTA, Brand, Navbar } from './components'
+import './App.css'
 
 const App = () => {
   return (

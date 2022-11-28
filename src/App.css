@@ -1,0 +1,128 @@
+/* For all the elements */
+* {
+  box-sizing: border-box;
+  /* box-sizing allows us to include padding and border in an element's total width and height.
+    See https://www.w3schools.com/csS/css3_box-sizing.asp.  If we set
+    box-sizing: border-box; on an element, padding and border are included in width & height:
+    which is different from default setting, which is 
+    width + padding + border = actual width of an element
+    height + padding + border = actual height of an element
+  */
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg)    /* --color-bg is a variable defined in index.css */
+}
+
+a {
+  color: unset;                  /* See below, I guess unset -> initial - white? */
+  text-decoration: none;
+}
+
+/* Generate the gradient data using the tool at https://angrytools.com/gradianet/
+webkit: https://webkit.org/   WebKit is the web browser engine used by Safari, Mail,
+App Store, and many other apps on macOS, iOS, and Linux.  */
+.gradient__bg {
+  background:-moz-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+  /* safari 5.1+,chrome 10+ */
+  background:-webkit-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+  /* opera 11.10+ */
+  background:-o-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+  /* ie 10+ */
+  background:-ms-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+  /* global 92%+ browsers support */
+  background:radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+}
+
+/* What Are rem Units?
+In CSS rem stands for “root em”, a unit of measurement that represents the font size of the root
+element. This means that 1rem equals the font size of the html element, which for most browsers
+has a default value of 16px. Using rem can help ensure consistency of font size and spacing
+throughout your UI. */
+.section__padding {
+  padding: 4rem 6rem;
+}
+
+.section__margin {
+  padding: 4rem 6rem;
+}
+
+.gradient__text {
+  background: var(--gradient-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* The background-clip property defines how far the background (color or image) should extend within an
+  element.  I guess text means the background only applies to text?
+border-box	  Default value. The background extends behind the border	
+padding-box	  The background extends to the inside edge of the border	
+content-box	  The background extends to the edge of the content box	
+initial	      Sets this property to its default value. Read about initial	
+inherit	      Inherits this property from its parent element. Read about inherit	
+*/
+/* The following three blocks related to animation was copied from animista.net/play/basic/scale-up
+  We will use animation in every section later?  Revisit*/
+.scale-up-center {
+  -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scale-up-center {
+  0% {
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+          transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .section__padding {
+    padding: 4rem;
+  }
+  .section__margin {
+    padding: 4rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .section__padding {
+    padding: 4rem 2rem;
+  }
+  .section__margin {
+    padding: 4rem 2rem ;
+  }
+}
+
+
+
+
+
+
+/*
+unset means
+If the cascaded value of a property is the unset keyword, then if it is an inherited
+property, this is treated as inherit, and if it is not, this is treated as initial.
+This keyword effectively erases all declared values occurring.  For example,
+if position is not an inherited property so it will always consider initial
+Each property has an initial value, defined in the property’s definition table.
+For position, it's static So you can simply use position:static and it will behave
+the same as position:unset
+*/

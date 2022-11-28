@@ -14,7 +14,8 @@
 
 (A6) Type rafce to create an App component templete
 
-(A7) git init and commit first commit =========
+=========== Commit  9286236 2022-11-26 | My first commit with only GPT-3 on the screen
+
 
 (B1) Add all components under src/compoments with rafce and add empty css files
 
@@ -25,4 +26,11 @@
 (B4) Create an index.js under containers directory for simplified export and import.
 
 (B5) Can see all the compoments as a line of text at localhost:3000
+
+===========  Commit  7ea7d20 2022-11-26 | Add all components and containers jsx and css files 
+
+(C1) Add App.css and filling a lot of CSS code with comments
+     Add indes.css for some css variable definition.
+     Now the from page show gradient.  
+     Before writing code for Navbar
 
