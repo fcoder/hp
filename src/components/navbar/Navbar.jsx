@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 // or https://iconscout.com/icons/ri we can see tons of different icons with varaible sizes.
 // ri means React Icons?
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri' // close is a "X" to close the menu
-import './navbar.css'                                     // 3 lines is a menu icon
+import './navbar.scss'                                     // 3 lines is a menu icon
 import logo from '../../assets/logo.svg'
 
 // This will be used twice below for PC and mobile

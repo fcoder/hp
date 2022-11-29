@@ -1,0 +1,170 @@
+// Use https://www.cssportal.com/css-to-scss/ to convert css to scss
+// Need to do npm install sass to get rid of an error due to scss evolution, otherwise see sass error
+// Before conversion, had better do some clean up, for example, don't use both #fff and #FFF because
+// they will be treated by the converter as two different color while they are actually the same
+
+$color_1: #fff;
+$font-family_1: var(--font-family); /* Defined in index.css */
+
+/* The flex property is a shorthand property for: flex-grow,flex-shrink and flex-basis
+default value is 0 1 auto:  flex-grow: 0 (disappear), flex-shrink: 1 (same as reset)
+and lex-basis: auto (Default value. The length is equal to the length of the flexible item.
+If the item has no length specified, the length will be according to its content)
+See https://www.w3schools.com/cssref/css3_pr_flex-grow.php
+    https://www.w3schools.com/cssref/css3_pr_flex-shrink.php
+    https://www.w3schools.com/cssref/css3_pr_flex-basis.php
+
+flex: <positive-number>
+Equivalent to flex: <positive-number> 1 0.
+Makes the flex item flexible (glow = <positive num, shrink=1 and sets the flex basis to zero)
+*/
+/*  Sign In and Sign Out */
+/* Up to this point, don't see a good mobile navbor*/
+.gpt3__navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem 6rem;
+}
+
+.gpt3__navbar-links {
+	flex: 1;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.gpt3__navbar-links_logo {
+	margin-right: 2rem;
+	img {
+		width: 62.56px;
+		height: 16.02px;
+	}
+}
+
+.gpt3__navbar-links_container {
+	display: flex;
+	flex-direction: row;
+	p {
+		color: $color_1;
+		font-family: $font-family_1;
+		font-weight: 500;            /* A little bolder */
+		font-size: 18px;
+		line-height: 25px;           /* same as box height */
+		text-transform: capitalize;
+		margin: 0 1rem;
+		cursor: pointer;
+	}
+}
+
+.gpt3__navbar-sign {    /* sign is for sign in and sign out */
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	p {
+		color: $color_1;
+		font-family: $font-family_1;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 25px;
+		text-transform: capitalize;
+		margin: 0 1rem;
+		cursor: pointer;
+	}
+	button {                        /* The tutor copied this from figma.com */
+		padding: 0.5rem 1rem;
+		color: $color_1;
+		background: #FF4820;
+		font-family: $font-family_1;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 25px;
+		border-radius: 5px;
+		border: 0;
+		outline: none;
+		cursor: pointer;
+	}
+}
+
+.gpt3__navbar-menu_container {
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	flex-direction: column;
+	text-align: end;
+	background: var(--color-footer);
+	padding: 2rem;
+	position: absolute;
+	right: 0;
+	top: 40px;
+	margin-top: 1rem;
+	min-width: 210px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 5px rgba(0,0, 0,0.2);
+	p {
+		color: $color_1;
+		font-family: $font-family_1;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 25px;
+		text-transform: capitalize;
+		cursor: pointer;
+		margin: 1rem 0;
+	}
+	button {
+		padding: 0.5rem 1rem;
+		color: $color_1;
+		background: #FF4820;
+		font-family: $font-family_1;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 25px;
+		border-radius: 5px;
+		border: 0;
+		outline: none;
+		cursor: pointer;
+	}
+}
+
+.gpt3__navbar-menu {
+	margin-left: 1rem;
+	display: none;
+	position: relative;
+	svg {
+		cursor: pointer;
+	}
+}
+
+.gpt3__navbar-menu_container-links-sign {
+	display: none;     /* Unless it's mobile, don't display dropdown for links and signin/signout */
+}
+
+@media screen and (max-width: 1050px) {
+	.gpt3__navbar-links_container { /* The one defined above is for browser. which is row flex displayed */
+		display: none;                /* If >= 1050px, display by default  If < 1050px, no navbar links */
+	}
+	.gpt3__navbar-menu {            /* Menu: Home, What is GPT3, Open AI... */
+		display: flex;                 /* For browser, display is none. */
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.gpt3__navbar {                 /* Same as < 1050, but reduce padding from 2rem 6rem */
+		padding: 2rem 4rem;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.gpt3__navbar {                 /* Same as wider screen, but reduce padding from to 2rem for all four */
+		padding: 2rem;
+	}
+	.gpt3__navbar-sign {            /* Sign is for both Sign In and Sign Out, disappear only on mobile */
+		display: none;                /* This and .gpt3__navbar-menu_container-links-sign below change at same time */
+  }
+	.gpt3__navbar-menu_container {
+		top: 20px;                    /* Reduce top from 40px to 20px */
+	}
+	.gpt3__navbar-menu_container-links-sign {
+		display: block;               /* Display dropdown for both links and signin/signout for mobile */
+	}
+}
