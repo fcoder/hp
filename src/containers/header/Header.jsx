@@ -1,5 +1,6 @@
 import React from 'react'
-import './header.css'
+// import './header.css'
+import './header.scss'   // This is converted from above css using https://www.cssportal.com/css-to-scss/
 import people from '../../assets/people.png'
 import ai from '../../assets/ai.png'
 
