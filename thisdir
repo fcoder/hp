@@ -38,3 +38,8 @@
 (D1) Finished Navbar, converted navbar.css to navbar.scss
 
 ===========  Commit  05e29fb 2022-11-28 | Commit modified package-lock.json and package.json 
+
+6db3e66 2022-11-29 | Header component is done with css [Yuming]
+cc66c9c 2022-11-30 | Use header.scss instead [Yuming]
+b05b695 2022-11-30 | Simple component brand is done (HEAD -> main) [Yuming]
+

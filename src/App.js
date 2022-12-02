@@ -20,7 +20,7 @@ const App = () => {
         <Header />
       </div>         {/* Note that above gradient__bg is only for Navbar and Header */}
       <Brand />
-      <WhatGPT3 />
+      <WhatGPT3 />   {/* Both <WhatGPT3> and <Features> use <Feature> */}
       <Features />
       <Possibility />
       <CTA />
