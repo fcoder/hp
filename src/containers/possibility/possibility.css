@@ -12,6 +12,11 @@
   margin-right: 2rem;
 }
 
+/* Always specify both the height and width attributes for images. If height and width are set,
+the space required for the image is reserved when the page is loaded. However, without these
+attributes, the browser does not know the size of the image, and cannot reserve the appropriate
+space to it. The effect will be that the page layout will change during loading (while the
+images load). */
 .gpt3__possibility-image img {
   width: 100%;
   height: 100%;

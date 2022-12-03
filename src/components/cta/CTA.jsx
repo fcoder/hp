@@ -1,3 +1,4 @@
+// CTA: Call to Action.  Example: Buy Now, Download Now.
 import React from 'react';
 // import './cta.css';
 import './cta.scss';
