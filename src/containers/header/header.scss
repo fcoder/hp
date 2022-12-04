@@ -17,8 +17,8 @@ $font-family_1: var(--font-family);
 	h1 {
 		font-family: $font-family_1;
 		font-weight: 800;
-		font-size: 62px;
-		line-height: 75px;
+		font-size: 50px;   // 62px;    Make header smaller
+		line-height: 50px; // 75px;
 		letter-spacing: -0.04em;
 	}
 	p {
@@ -99,7 +99,10 @@ $font-family_1: var(--font-family);
 	img {
 		width: 100%;
 		height: 100%;
+    border: solid 1px yellow;  // Add for HP
+    border-radius: 3%;           // Add for HP
 	}
+
 }
 
 @media screen and (max-width: 1050px) {
