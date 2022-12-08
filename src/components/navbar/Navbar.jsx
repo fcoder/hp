@@ -31,13 +31,20 @@ const Menu = () => (
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [signUpDropdown, setSignUpDropdown] = useState(true)
+
+  const toggleSignUpDropdown = (e) => {
+    e.preventDefault();
+    signUpDropdown ? setSignUpDropdown(false) : setSignUpDropdown(true);
+    // console.log("Hello")
+    // console.log(`signUpDropdown = ${signUpDropdown}`)
+  }
 
   return (
     <div className="gpt3__navbar">
 
       <div className="gpt3__navbar-links">
         <div className="gpt3__navbar-links_logo">
-          {/* <img src={logo} alt="logo" /> */}
           <img src={logo} alt="logo" />
         </div>
 
@@ -48,26 +55,39 @@ const Navbar = () => {
 
       <div className="gpt3__navbar-sign">  {/* SignIn/SignOut will be moved to dropdown on mobile */}
         <p>Sign in</p>
-        <button type="button">Sign up</button>
+        {/* <button type="button">Sign up</button> */}
+        <button type="button" onClick={toggleSignUpDropdown}>Sign up</button>
       </div>
 
-      <div className="gpt3__navbar-menu">
-        {toggleMenu       /* If menu is rendered, click it to close the menu */
+      <div className="gpt3__navbar-menu">  {/* This is for  mobile small screen */}
+        { toggleMenu       /* If menu is rendered, click it to close the menu */
           ? <RiCloseLine color="#fff" size={27} onClick={() => setToggleMenu(false)} />
           : <RiMenu3Line color="#fff" size={27} onClick={() => setToggleMenu(true)} />
         }
-        {toggleMenu && (  /* If toogleMeny=true, render the menu. scale-up-center in App.css */
-        <div className  ="gpt3__navbar-menu_container scale-up-center">
-          <div className="gpt3__navbar-menu_container-links">
-            <Menu />      {/* The menu in Navbar or as dropdown */}
-          </div>
-          <div className="gpt3__navbar-menu_container-links-sign"> {/* SignIn link, SignUp btn */}
-            <p>Sign in</p>       {/* At the end of drop down menu only for mobile */} 
-            <button type="button">Sign up</button>
-          </div>
-        </div>
-        )}
+        {
+          toggleMenu && (   /* If toogleMeny=true, render the menu. scale-up-center in App.css */
+            <div className  ="gpt3__navbar-menu_container scale-up-center">
+              <div className="gpt3__navbar-menu_container-links">
+                <Menu />      {/* The menu in Navbar or as dropdown */}
+              </div>
+              <div className="gpt3__navbar-menu_container-links-sign"> {/* SignIn link, SignUp btn */}
+                <p>Sign in</p>       {/* At the end of drop down menu only for mobile */} 
+                <button type="button" onClick={toggleSignUpDropdown}>Sign up</button>
+              </div>
+            </div>
+          )
+        }
       </div>
+
+      {/* Render dropdown here for sign up for both PC and mobile*/}
+      {
+        signUpDropdown ? console.log('Render Signup Dropdown') : console.log('No Dropdown')
+      }
+      {
+        signUpDropdown && (   /* If toogleMeny=true, render the menu. scale-up-center in App.css */
+          <div>{console.log('display dropdown')}</div>
+        )
+      }
 
     </div>
   );
