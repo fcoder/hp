@@ -20,11 +20,12 @@ import logo from '../../assets/hisense-seeklogo.com.svg'
 // )
 const Menu = () => (
   <>
-    <p><a href="#home">Home</a></p>
-    <p><a href="#peoducts">Products</a></p>
-    <p><a href="#technology">Technology</a></p>
-    <p><a href="#aboutus">About Us</a></p>
-    <p><a href="#contactus">Contact Us</a></p>
+    <p><a href="#home">Home</a></p>                      {/* Header.jsx   */}
+    <p><a href="#products">Products</a></p>              {/* Features.jsx */}
+    {/* <p><a href="#technology">Technology</a></p> */}
+    <p><a href="#technology">Technology</a></p>          {/* Blog.jsx     */}
+    <p><a href="#aboutus">About Us</a></p>               {/* WhatGPT3.jsx */}
+    <p><a href="#contactus">Contact Us</a></p>           {/* Footer.jsx   */}
   </>
 )
 

@@ -4,7 +4,7 @@ import hpLogo from '../../assets/hisense-seeklogo.com.svg'
 import './footer.css';
 
 const Footer = () => (
-  <div className="gpt3__footer section__padding">
+  <div className="gpt3__footer section__padding" id="contactus">>
 
     <div className="gpt3__footer-heading">
       <h1 className="gradient__text">Do you want to step in to the future before others</h1>
