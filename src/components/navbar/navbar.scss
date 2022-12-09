@@ -109,7 +109,7 @@ Makes the flex item flexible (glow = <positive num, shrink=1 and sets the flex b
     padding: 2rem;
     position: absolute;
     right: 0;
-    top: 40px;
+    top: 80px; // Original 40px; changed to 80px so sign up dropdown won't cover the sign up button
     margin-top: 1rem;
     min-width: 210px;
     border-radius: 5px;
@@ -175,7 +175,7 @@ Makes the flex item flexible (glow = <positive num, shrink=1 and sets the flex b
        display: none;    // Changes w/ .gpt3__navbar-menu_container-links-sign below
     }
     .gpt3__navbar-menu_container {
-       top: 20px;        // Reduce top from 40px to 20px
+       top: 40px;        // Reduce top from 80px to 40px, was 20px before adding sign up dropdown
     }
     .gpt3__navbar-menu_container-links-sign {
        display: block;   // Display dropdown for both links and signin/signout for mobile

@@ -64,6 +64,8 @@ content-box	  The background extends to the edge of the content box
 initial	      Sets this property to its default value. Read about initial	
 inherit	      Inherits this property from its parent element. Read about inherit	
 */
+
+
 /* The following three blocks related to animation was copied from animista.net/play/basic/scale-up
   We will use animation in every section later?  Revisit*/
 .scale-up-center {
@@ -110,10 +112,6 @@ inherit	      Inherits this property from its parent element. Read about inherit
     padding: 4rem 2rem ;
   }
 }
-
-
-
-
 
 
 /*

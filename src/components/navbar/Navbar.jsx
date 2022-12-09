@@ -81,11 +81,13 @@ const Navbar = () => {
 
       {/* Render dropdown here for sign up for both PC and mobile*/}
       {
-        signUpDropdown ? console.log('Render Signup Dropdown') : console.log('No Dropdown')
-      }
-      {
         signUpDropdown && (   /* If toogleMeny=true, render the menu. scale-up-center in App.css */
-          <div>{console.log('display dropdown')}</div>
+          <div className="gpt3__navbar-menu_container scale-up-center" style={{color:'white'}}>
+            Pop Up For Sign Up xxxxxxxxxxx<br />
+            Pop Up For Sign Up xxxxxxxxxxx<br />
+            Pop Up For Sign Up xxxxxxxxxxx<br />
+            Pop Up For Sign Up xxxxxxxxxxx<br />
+          </div>
         )
       }
 
