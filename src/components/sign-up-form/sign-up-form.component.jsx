@@ -102,11 +102,11 @@ const SignUpForm = () => {
 
   return ( // sign-up-container is for button style
     <div className='sign-up-container'>
-      <h2>Don't have an account?</h2>
-      <span>Sign up with a
-        <span style={{color: '#FF7070', fontWeight: 'bold'}}> verifiable </span> 
+      {/* <h2>Don't have an account?</h2> */}
+      <h3>Sign up with a
+        <span style={{color: '#FF7070'}}> verifiable </span>
         email and password
-      </span>
+      </h3>
       <form onSubmit={handleSubmit}>
         <FormInput
           label='Display Name'

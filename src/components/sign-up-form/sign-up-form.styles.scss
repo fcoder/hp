@@ -3,7 +3,10 @@
   flex-direction: column;
   width: 380px;
 
-  h2 {
+  h3 {       // h2
     margin: 10px 0;
+    text-align: left;
+    font-family: var(--font-family);
+    font-weight: normal;
   }
 }
