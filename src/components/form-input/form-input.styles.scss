@@ -1,0 +1,79 @@
+$sub-color: grey;
+$main-color: black;
+
+@mixin shrinkLabel {
+  top: -14px;
+  font-size: 12px;
+  color: $main-color;
+}
+
+.group {       // See the jsx code below
+  position: relative;
+  margin: 45px 0;
+
+  @media screen and (max-width: 800px) {
+    margin: 0; // Reduce from 45px to 0 for mobile, also adjust margin of .form-input below
+  }
+
+  .form-input {
+    background: none;
+    background-color: white;
+    color: $sub-color;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid $sub-color;
+    margin: 25px 0;
+
+    @media screen and (max-width: 800px) {
+      width: 75%;      //  Narrow the input boxes
+      margin: 10px;    // Reduce from 25px to 10px for mobile
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus ~ .form-input-label {
+      @include shrinkLabel();
+    }
+  }
+
+  input[type='password'] {
+    letter-spacing: 0.3em;
+  }
+
+  .form-input-label {
+    color: $sub-color;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 300ms ease all;
+
+    &.shrink {
+      @include shrinkLabel();
+    }
+  }
+}
+
+// The jsx code which uses css here:
+// const FormInput = ({ label, ...otherProps }) => { // otherProps: type, required, conChange, name, value
+//   return (
+//     <div className='group'>
+//       <input className='form-input' {...otherProps} />
+//       {label && (
+//         <label            // non null length means user has typed something
+//           className={`${otherProps.value.length ? 'shrink' : ''} form-input-label`}
+//         >
+//           {label}
+//         </label>
+//       )}
+//     </div>
+//   );
+// };

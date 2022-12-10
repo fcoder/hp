@@ -7,6 +7,7 @@ import './navbar.scss'                                     // 3 lines is a menu 
 // import logo from '../../assets/logo.svg'
 // Error with namespace import logo from '../../assets/HisenseLogo.svg'
 import logo from '../../assets/hisense-seeklogo.com.svg'
+import SignUpForm from '../../components/sign-up-form/sign-up-form.component'
 
 // This will be used twice below for PC and mobile
 // const Menu = () => (
@@ -83,10 +84,7 @@ const Navbar = () => {
       {
         signUpDropdown && (   /* If toogleMeny=true, render the menu. scale-up-center in App.css */
           <div className="gpt3__navbar-menu_container scale-up-center" style={{color:'white'}}>
-            Pop Up For Sign Up xxxxxxxxxxx<br />
-            Pop Up For Sign Up xxxxxxxxxxx<br />
-            Pop Up For Sign Up xxxxxxxxxxx<br />
-            Pop Up For Sign Up xxxxxxxxxxx<br />
+            <SignUpForm />
           </div>
         )
       }
