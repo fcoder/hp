@@ -23,13 +23,14 @@ $main-color: black;
     padding: 10px 10px 10px 5px;
     display: block;
     width: 100%;
-    border: none;
+    border: solid; // TTT none;
+    border-color: green; //  TTT
     border-radius: 0;
     border-bottom: 1px solid $sub-color;
     margin: 25px 0;
 
     @media screen and (max-width: 800px) {
-      width: 75%;      //  Narrow the input boxes
+      width: 100%; // TTT 75%;      //  Narrow the input boxes
       margin: 10px;    // Reduce from 25px to 10px for mobile
     }
 

@@ -1,0 +1,32 @@
+// signInDropdown and signUpDropdown for Navbar, SignInForm and SignUpForm to access
+
+// import { createContext, useState, useEffect } from 'react';
+import { createContext, useState } from 'react';
+
+export const SignDropdownContext = createContext({
+  signInDropdown: null,
+  setSignInDropdown: () => {},
+  signUpDropdown: null,
+  setSignUpDropdown: () => {},
+})
+
+export const SignDropdownProvider = ({ children }) => {
+    const [signInDropdown, setSignInDropdown] = useState(null);
+    const [signUpDropdown, setSignUpDropdown] = useState(null);
+    const value = { signInDropdown, setSignInDropdown, signUpDropdown, setSignUpDropdown };
+
+    // useEffect(() => {
+    //     // (user) => { console.log(user) } callback called when auth changes
+    //     const unsubscribe = onAuthStateChangedListener((user) => {
+    //         if (user) {            // user is a big object including displayName and email
+    //           createUserDocumentFromAuth(user);
+    //           if (user.emailVerified) {
+    //             setCurrentUser(user); // run this whenever the user value comes back from above await
+    //           }                       // Set to authenticated user or null, the only place we update user
+    //         }                         // Set to null is also important, that determines if we see
+    //     });                           // SIGN IN or SIGN OUT in the Navbar.
+    //     return unsubscribe
+    // }, []);
+
+    return <SignDropdownContext.Provider value={value}>{children}</SignDropdownContext.Provider>
+}

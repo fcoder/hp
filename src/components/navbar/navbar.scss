@@ -113,6 +113,8 @@ Makes the flex item flexible (glow = <positive num, shrink=1 and sets the flex b
     margin-top: 1rem;
     min-width: 210px;
     border-radius: 5px;
+    border-style: solid; // TTT
+    border-color: red; // TTT
     box-shadow: 0px 0px 5px rgba(0,0, 0,0.2);
     p {
         color: $color_1;

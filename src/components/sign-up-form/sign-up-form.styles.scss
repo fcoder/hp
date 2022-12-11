@@ -3,10 +3,16 @@
   flex-direction: column;
   width: 380px;
 
-  h3 {       // h2
+  h3 {
     margin: 10px 0;
     text-align: left;
     font-family: var(--font-family);
     font-weight: normal;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .sign-up-container {
+    width: 320px;
   }
 }
