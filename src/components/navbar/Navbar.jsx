@@ -78,18 +78,19 @@ const Navbar = () => {
         }
       </div>
 
-      {                       /* Render dropdown for SIGN UP for both PC and mobile*/
+      {                       /* Render dropdown for SIGN IN for both PC and mobile*/
         signInDropdown && (   /* If toogleMeny=true, render the menu. scale-up-center in App.css */
           <div className="gpt3__navbar-menu_container scale-up-center" style={{color:'white'}}>
-            {/* <SignInForm /> */}
+            {/* Pass setSignInDropdown to SignInForm in case it needs to cancel signing in */}
             <SignInForm setSignInDropdown={setSignInDropdown} />
           </div>
         )
       }
 
-      {                       /* Render dropdown for SIGN IN for both PC and mobile*/
+      {                       /* Render dropdown for SIGN UP for both PC and mobile*/
         signUpDropdown && (   /* If toogleMeny=true, render the menu. scale-up-center in App.css */
           <div className="gpt3__navbar-menu_container scale-up-center" style={{color:'white'}}>
+            {/* Pass setSignUpDropdown to SignInForm in case it needs to cancel signing up */}
             <SignUpForm setSignUpDropdown={setSignUpDropdown} />
           </div>
         )

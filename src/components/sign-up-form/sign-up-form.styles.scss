@@ -1,18 +1,12 @@
 .sign-up-container {
   display: flex;
   flex-direction: column;
-  width: 380px;
+  width: 100%; // Use all width for sign up form input boxes
 
   h3 {
     margin: 10px 0;
     text-align: left;
     font-family: var(--font-family);
     font-weight: normal;
-  }
-}
-
-@media screen and (max-width: 550px) {
-  .sign-up-container {
-    width: 320px;
   }
 }

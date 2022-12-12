@@ -112,11 +112,11 @@ Makes the flex item flexible (glow = <positive num, shrink=1 and sets the flex b
     top: 80px; // Original 40px; changed to 80px so sign up dropdown won't cover the sign up button
     margin-top: 1rem;
     min-width: 210px;
+    max-width: 340px; // YC  Just add to reduce the width of the container
     border-radius: 5px;
-    border-style: solid; // TTT
-    border-color: red; // TTT
+    border: solid red 1px; // YC
     box-shadow: 0px 0px 5px rgba(0,0, 0,0.2);
-    p {
+    p {                      // For "Sign up with a verifiable email and password"
         color: $color_1;
         font-family: $font-family_1;
         font-weight: 500;
@@ -127,7 +127,7 @@ Makes the flex item flexible (glow = <positive num, shrink=1 and sets the flex b
         margin: 1rem 0;
     }
     button {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 1rem;  // THIS IS THE CSS FOR THE BUTTON IN SIGNUP FORM!!!!
         color: $color_1;
         background: #FF4820;
         font-family: $font-family_1;

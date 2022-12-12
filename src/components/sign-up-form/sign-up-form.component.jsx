@@ -1,14 +1,10 @@
 import { useState } from 'react';
 import { sendEmailVerification } from "firebase/auth";
-
 import FormInput from '../form-input/form-input.component'; // FormInput shard by sign in and sign up
-import Button, { BUTTON_TYPE_CLASSES }  from '../button/button.component';
-
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from '../../utils/firebase/firebase.utils';
-
 import './sign-up-form.styles.scss';
 
 const defaultFormFields = {  // initialize with empty strings
@@ -18,7 +14,7 @@ const defaultFormFields = {  // initialize with empty strings
   confirmPassword: ''
 };
 
-// props <SignUpForm setFlagFunc={signUpDropdown} setFunc={setSignUpDropdown} />
+// Parent element passes function setSignUpDropdown to this element
 const SignUpForm = ({ setSignUpDropdown }) => {
   // useState for this component only. SignInForm has its own with same but diff default values
   const [formFields, setFormFields] = useState(defaultFormFields);
@@ -151,13 +147,12 @@ const SignUpForm = ({ setSignUpDropdown }) => {
           name='confirmPassword'
           value={confirmPassword}
           autoComplete='on'         // To shut up warning "Input elements should have autocomplete attributes"
-        />   {/* When this button is clicked, form is submit, CB handleSubmit is called if all validation pass */}
+        />
 
-        <Button type='submit'>Sign Up</Button>
+        {/* When Sign Up button is pressed, above handleSubmit func is called if all validation pass */}
+        <button type='submit'>Sign Up</button>
+        <button type='button' onClick={signUpCancel}>Cancel</button>
 
-        <Button buttonType={BUTTON_TYPE_CLASSES.google} type='button' onClick={signUpCancel}>
-          Cancel
-        </Button>
       </form>
     </div>
   );

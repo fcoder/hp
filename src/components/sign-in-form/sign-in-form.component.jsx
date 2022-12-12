@@ -1,13 +1,10 @@
 import { useState, useContext } from 'react';
 import FormInput from '../form-input/form-input.component';
-import Button, { BUTTON_TYPE_CLASSES }  from '../button/button.component';
 import { UserContext } from '../../context/user.context';
-
 import {
   signInWithGooglePopup,
   signInAuthUserWithEmailAndPassword,
 } from '../../utils/firebase/firebase.utils';
-
 import './sign-in-form.styles.scss';
 
 const defaultFormFields = {
@@ -91,17 +88,14 @@ const SignInForm = ( { setSignInDropdown }) => {
           autoComplete='on'    // To shut up warning "Input elements should have autocomplete attributes"
         />
         <div className='buttons-container'>      {/* SIGN IN and GOOGLE SIGN IN buttons */}
-          <Button type='submit'>Sign In</Button> {/* See onSubmit above for the submission code */}
-
-          {/* It is import to specify type="button" because by default, type is submit, which will'
-          also submit the data in above Sign In box to be submitted and cause confusing error
-          button only bring up the Google sign in page instead of submitting data */}
-          <Button buttonType={BUTTON_TYPE_CLASSES.google} type='button' onClick={signInWithGoogle}>
-            Google sign in
-          </Button>
-          <Button buttonType={BUTTON_TYPE_CLASSES.google} type='button' onClick={signInCancel}>
+          <button type='submit'>Sign In</button>
+          {/* It is import to specify type="button" because by default, type is "submit", which will
+          also submit the data in above Sign In box and thus cause confusing error.  type="button"
+          only brings up the Google sign in page instead of submitting data */}
+          <button type='button' onClick={signInWithGoogle}>Google sign in</button>
+          <button type='button' onClick={signInCancel}>
             Cancel
-          </Button>
+          </button>
         </div>
       </form>
     </div>

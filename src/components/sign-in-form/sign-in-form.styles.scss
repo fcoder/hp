@@ -1,7 +1,7 @@
 .sign-in-container {
   display: flex;
   flex-direction: column;
-  width: 380px;
+  width: 100%;  // Use all width for sign in form input boxes
 
   h3 {
     margin: 10px 0;
@@ -17,11 +17,5 @@
     @media screen and (max-width: 800px) {
       justify-content: left;
     }
-  }
-}
-
-@media screen and (max-width: 550px) {
-  .sign-in-container {
-    width: 305px;
   }
 }

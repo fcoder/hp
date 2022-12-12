@@ -11,7 +11,8 @@ $main-color: black;
   position: relative;
   margin: 45px 0;
 
-  @media screen and (max-width: 800px) {
+  // @media screen and (max-width: 800px) {
+  @media screen and (max-width: 550px) {
     margin: 0; // Reduce from 45px to 0 for mobile, also adjust margin of .form-input below
   }
 
@@ -20,19 +21,12 @@ $main-color: black;
     background-color: white;
     color: $sub-color;
     font-size: 18px;
-    padding: 10px 10px 10px 5px;
+    padding: 10px;
     display: block;
     width: 100%;
-    border: solid; // TTT none;
-    border-color: green; //  TTT
     border-radius: 0;
     border-bottom: 1px solid $sub-color;
     margin: 25px 0;
-
-    @media screen and (max-width: 800px) {
-      width: 100%; // TTT 75%;      //  Narrow the input boxes
-      margin: 10px;    // Reduce from 25px to 10px for mobile
-    }
 
     &:focus {
       outline: none;
@@ -53,7 +47,7 @@ $main-color: black;
     font-weight: normal;
     position: absolute;
     pointer-events: none;
-    left: 5px;
+    left: 10px; //5px;
     top: 10px;
     transition: 300ms ease all;
 
