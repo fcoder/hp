@@ -6,7 +6,7 @@
 // are actually the same
 
 $color_1: #fff;
-$font-family_1: var(--font-family); /* Defined in index.css */
+$font-family_1: var(--font-family); /* Defined in index.css, only font style, not its size */
 
 /* The flex property is a shorthand property for: flex-grow,flex-shrink and flex-basis
 default value is 0 1 auto:  flex-grow: 0 (disappear), flex-shrink: 1 (same as reset)
@@ -110,9 +110,9 @@ Makes the flex item flexible (glow = <positive num, shrink=1 and sets the flex b
     position: absolute;
     right: 0;
     top: 80px; // Original 40px; changed to 80px so sign up dropdown won't cover the sign up button
-    margin-top: 1rem;
+    margin: 1rem 1rem 0 0;
     min-width: 210px;
-    max-width: 340px; // YC  Just add to reduce the width of the container
+    // max-width: 340px; // YC  Just add to reduce the width of the container
     border-radius: 5px;
     border: solid red 1px; // YC
     box-shadow: 0px 0px 5px rgba(0,0, 0,0.2);
@@ -127,7 +127,7 @@ Makes the flex item flexible (glow = <positive num, shrink=1 and sets the flex b
         margin: 1rem 0;
     }
     button {
-        padding: 0.5rem 1rem;  // THIS IS THE CSS FOR THE BUTTON IN SIGNUP FORM!!!!
+        padding: 0.7rem; // 1rem;  // Will reduce to 0.5rem for mobile below
         color: $color_1;
         background: #FF4820;
         font-family: $font-family_1;
@@ -177,7 +177,13 @@ Makes the flex item flexible (glow = <positive num, shrink=1 and sets the flex b
        display: none;    // Changes w/ .gpt3__navbar-menu_container-links-sign below
     }
     .gpt3__navbar-menu_container {
-       top: 40px;        // Reduce top from 80px to 40px, was 20px before adding sign up dropdown
+       top: 40px;             // Reduce top from 80px to 40px, was 20px before adding sign up dropdown
+       margin: 2rem 1rem 0 0; // Lower and left shift the signin and signup form for mobile
+       padding: 1rem;         // Reduce from 1.5rem to give more space contents of signin & signup forms
+       max-width: 340px;      // Reduce the width of the container
+       button {
+        padding: 0.5rem;      // Make button in signin and signup forms narrower
+       }
     }
     .gpt3__navbar-menu_container-links-sign {
        display: block;   // Display dropdown for both links and signin/signout for mobile

@@ -3,7 +3,7 @@
 
 /* This defines css varaibles to be used by our App */
 :root {
-  --font-family: 'Manrope', sans-serif;
+  --font-family: 'Manrope', sans-serif;   /* Note font-size is not defined here */
 
   /* The following two gradient css are used at multiple places, nice */
   --gradient-text: linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%);

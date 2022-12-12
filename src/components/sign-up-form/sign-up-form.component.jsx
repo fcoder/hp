@@ -151,6 +151,7 @@ const SignUpForm = ({ setSignUpDropdown }) => {
 
         {/* When Sign Up button is pressed, above handleSubmit func is called if all validation pass */}
         <button type='submit'>Sign Up</button>
+        <span> </span>
         <button type='button' onClick={signUpCancel}>Cancel</button>
 
       </form>

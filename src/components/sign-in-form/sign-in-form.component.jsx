@@ -89,10 +89,12 @@ const SignInForm = ( { setSignInDropdown }) => {
         />
         <div className='buttons-container'>      {/* SIGN IN and GOOGLE SIGN IN buttons */}
           <button type='submit'>Sign In</button>
+          <span> </span>
           {/* It is import to specify type="button" because by default, type is "submit", which will
           also submit the data in above Sign In box and thus cause confusing error.  type="button"
           only brings up the Google sign in page instead of submitting data */}
           <button type='button' onClick={signInWithGoogle}>Google sign in</button>
+          <span> </span>
           <button type='button' onClick={signInCancel}>
             Cancel
           </button>
