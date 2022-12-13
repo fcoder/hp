@@ -14,8 +14,11 @@ const defaultFormFields = {  // initialize with empty strings
   confirmPassword: ''
 };
 
-// Parent element passes function setSignUpDropdown to this element
-const SignUpForm = ({ setSignUpDropdown }) => {
+// Parent element passes down function setSignUpDropdown to this element to set signUpDropfown flag
+// Parent element also passes down toggleMenu, if it is ture, then this Sign Up form is for mobiles,
+// we will render a cancel button for quitting because the Sign Up button for mobiles is behind this
+// form so cannot be pressed to cancel as the Sign Up button in the Navbar for PC
+const SignUpForm = ({ setSignUpDropdown, needCancelSignUp }) => {
   // useState for this component only. SignInForm has its own with same but diff default values
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
@@ -152,8 +155,8 @@ const SignUpForm = ({ setSignUpDropdown }) => {
         {/* When Sign Up button is pressed, above handleSubmit func is called if all validation pass */}
         <button type='submit'>Sign Up</button>
         <span> </span>
-        <button type='button' onClick={signUpCancel}>Cancel</button>
-
+        {/* Render cancel button only if this Sign Up form is for mobilels */}
+        { needCancelSignUp &&  <button type='button' onClick={signUpCancel}>Cancel</button> }
       </form>
     </div>
   );

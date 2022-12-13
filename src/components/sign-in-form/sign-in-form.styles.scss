@@ -1,17 +1,22 @@
 .sign-in-container {
   display: flex;
   flex-direction: column;
-  width: 100%;  // Use all width for sign in form input boxes
+  width: 100%;             // Use all width for sign in form input boxes
 
-  h3 {
+  h3 {                     // The title in Sign In "Sign in with email and password"
     margin: 10px 0;
     text-align: left;
     font-family: var(--font-family);
-    font-weight: normal;
+    font-weight: normal;   // Normal so it is not too bold
+    font-size: 20px;
   }
 
   .buttons-container {
     display: flex;
     justify-content: space-between;
+
+    @media screen and (min-width: 550px) {  // If Sign In menu is for PC, shift two button right
+      padding-left: 20px;
+    }
   }
 }

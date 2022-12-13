@@ -26,9 +26,9 @@ const Navbar = () => {
 
   const toggleSignUpDropdown = (e) => {
     e.preventDefault();
-    if (toggleMenu) {  // On small mobile dropdown menu, close dropdown menu before render sign up menu
-      setToggleMenu(false)
-    }
+    if (toggleMenu) {       // Only mobiles has toogleMenu=true, close dropdown menu before rendering sign up menu
+      setToggleMenu(false)  // This will cause dropdown before rendering SignUp form
+    } 
     signUpDropdown ? setSignUpDropdown(false) : setSignUpDropdown(true);
   }
 
@@ -48,27 +48,57 @@ const Navbar = () => {
           <img src={logo} alt="logo" />
         </div>
 
+        {/* gpt3__navbar-links_container has display: none for mobiles, so this <Menu> is for PC */}
         <div className="gpt3__navbar-links_container">
           <Menu />
         </div>
       </div>
 
+      {/* gpt3__navbar-sign has display: none for mobiles, so Sign In/Up below are for PC */}
       <div className="gpt3__navbar-sign">  {/* SignIn/SignOut will be moved to dropdown on mobile */}
         <p onClick={toggleSignInDropdown}>Sign in</p>
         <button type="button" onClick={toggleSignUpDropdown}>Sign up</button>
+        {/* If Sign In link or the Sign Up button is pressed,  render Sign In or Sign Up form!  */}
+        {                       /* Render dropdown for SIGN IN for both PC and mobile*/
+          signInDropdown && (   /* If toogleMeny=true, render the menu. scale-up-center in App.css */
+            <div className="gpt3__navbar-menu_container scale-up-center" style={{color:'white'}}>
+              {/* Pass setSignInDropdown to SignInForm in case it needs to cancel signing in */}
+              <SignInForm setSignInDropdown={setSignInDropdown} needCancelSignIn={false}/>
+            </div>
+          )
+        }
+
+        {                       /* Render dropdown for SIGN UP for both PC and mobile*/
+          signUpDropdown && (   /* If toogleMeny=true, render the menu. scale-up-center in App.css */
+            <div className="gpt3__navbar-menu_container scale-up-center" style={{color:'white'}}>
+              {/* Pass setSignUpDropdown to SignInForm in case it needs to cancel signing up */}
+              <SignUpForm setSignUpDropdown={setSignUpDropdown} needCancelSignUp={false} />
+            </div>
+          )
+        }
       </div>
 
+      {/* ========================================================================================
+        gpt3__navbar-menu is OPPSITE from above gpt3__navbar-links_container and gpt3__navbar-sign
+        its display: is one for PC instead of for mobiles, so the following menu is for
+        mobiles only
+      */}
       <div className="gpt3__navbar-menu">  {/* FOR SMALL MOBILE SCREEN ONLY */}
-        { toggleMenu       /* If menu is rendered, click it to close the menu */
-          ? <RiCloseLine color="#fff" size={27} onClick={() => setToggleMenu(false)} />
-          : <RiMenu3Line color="#fff" size={27} onClick={() => setToggleMenu(true)} />
+        {/* First make sure the icon in the Navbar is right (either an X or a 3 line icon)*/}
+        { toggleMenu        /* toggleMenu true means menu for mobile is currently rendered. click again to close it */
+          ? <RiCloseLine color="#fff" size={27} onClick={() => setToggleMenu(false)} /> // Show "X"
+          : <RiMenu3Line color="#fff" size={27} onClick={() => setToggleMenu(true)} />  // Show 3 bars 
         }
         {
-          toggleMenu && (   /* If toogleMeny=true, render the menu. scale-up-center in App.css */
+          toggleMenu && (   /* If toogleMenu=true, render dreopdown, scale-up-center in App.css */
             <div className  ="gpt3__navbar-menu_container scale-up-center">
+
+              {/* Render menu in the dropdown */}
               <div className="gpt3__navbar-menu_container-links">
-                <Menu />            {/* The menu in Navbar or as dropdown */}
+                <Menu />    {/* The menu in either Navbar or as dropdown */}
               </div>
+
+              {/* Then render SignIn link and Sign Up button */}
               <div className="gpt3__navbar-menu_container-links-sign"> {/* SignIn link, SignUp btn */}
                 <p onClick={toggleSignInDropdown}>Sign in</p>    {/* At end of dropdown for mobile */}
                 <button type="button" onClick={toggleSignUpDropdown}>Sign up</button>
@@ -76,25 +106,25 @@ const Navbar = () => {
             </div>
           )
         }
+        {/* If Sign In link or the Sign Up button is pressed,  render Sign In or Sign Up form!  */}
+          {                       /* Render dropdown for SIGN IN for both PC and mobile*/
+            signInDropdown && (   /* If toogleMeny=true, render the menu. scale-up-center in App.css */
+              <div className="gpt3__navbar-menu_container scale-up-center" style={{color:'white'}}>
+                {/* Pass setSignInDropdown to SignInForm in case it needs to cancel signing in */}
+                <SignInForm setSignInDropdown={setSignInDropdown} needCancelSignIn={true}/>
+              </div>
+            )
+          }
+
+          {                       /* Render dropdown for SIGN UP for both PC and mobile*/
+            signUpDropdown && (   /* If toogleMeny=true, render the menu. scale-up-center in App.css */
+              <div className="gpt3__navbar-menu_container scale-up-center" style={{color:'white'}}>
+                {/* Pass setSignUpDropdown to SignInForm in case it needs to cancel signing up */}
+                <SignUpForm setSignUpDropdown={setSignUpDropdown} needCancelSignUp={true} />
+              </div>
+            )
+        }
       </div>
-
-      {                       /* Render dropdown for SIGN IN for both PC and mobile*/
-        signInDropdown && (   /* If toogleMeny=true, render the menu. scale-up-center in App.css */
-          <div className="gpt3__navbar-menu_container scale-up-center" style={{color:'white'}}>
-            {/* Pass setSignInDropdown to SignInForm in case it needs to cancel signing in */}
-            <SignInForm setSignInDropdown={setSignInDropdown} />
-          </div>
-        )
-      }
-
-      {                       /* Render dropdown for SIGN UP for both PC and mobile*/
-        signUpDropdown && (   /* If toogleMeny=true, render the menu. scale-up-center in App.css */
-          <div className="gpt3__navbar-menu_container scale-up-center" style={{color:'white'}}>
-            {/* Pass setSignUpDropdown to SignInForm in case it needs to cancel signing up */}
-            <SignUpForm setSignUpDropdown={setSignUpDropdown} />
-          </div>
-        )
-      }
 
     </div>
   );

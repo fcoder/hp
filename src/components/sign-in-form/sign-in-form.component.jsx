@@ -12,7 +12,11 @@ const defaultFormFields = {
   password: '',
 };
 
-const SignInForm = ( { setSignInDropdown }) => {
+// Parent element passes down function setSignInDropdown to this element to set signInDropfown flag
+// Parent element also passes down toggleMenu, if it is ture, then this Sign Ip form is for mobiles,
+// we must render a cancel button for quitting because the Sign In button for mobiles are behind this
+// form and cannot be pressed to cancel as the Sign Ip button in the Navbar for PC
+const SignInForm = ( { setSignInDropdown, needCancelSignIn }) => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
   const { setCurrentUser } = useContext(UserContext);
@@ -66,7 +70,6 @@ const SignInForm = ( { setSignInDropdown }) => {
   return (
     <div className='sign-in-container'>
       {/* <h2>Already have an account?</h2> */}
-      {/* <span>Sign in with email and password</span> */}
       <h3>Sign in with email and password</h3>
       <form onSubmit={handleSubmit}>
         <FormInput             // Enter email address
@@ -95,9 +98,8 @@ const SignInForm = ( { setSignInDropdown }) => {
           only brings up the Google sign in page instead of submitting data */}
           <button type='button' onClick={signInWithGoogle}>Google sign in</button>
           <span> </span>
-          <button type='button' onClick={signInCancel}>
-            Cancel
-          </button>
+          {/* See comment above this Element for the reason of checking toggleMenu */}
+          { needCancelSignIn && <button type='button' onClick={signInCancel}>Cancel</button> }
         </div>
       </form>
     </div>
