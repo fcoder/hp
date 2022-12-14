@@ -1,4 +1,4 @@
-.gpt3__blog-container_article {
+.hp__blog-container_article {
   width: 100%;
   height: 100%;
 
@@ -7,7 +7,7 @@
   background: var(--color-footer);
 }
 
-.gpt3__blog-container_article-image {
+.hp__blog-container_article-image {
   width: 100%;
   height: 100%;
   background: var(--color-bg);
@@ -20,12 +20,12 @@
 browser to know how much space to leave for an image. Without these values,
 the browser doesn't initially create a space for the image, which means
 elements surrounding the image are adjusted after it has loaded. */
-.gpt3__blog-container_article-image img {
+.hp__blog-container_article-image img {
   width: 100%;        /* Must have this, otherwise the articles take twice as much space */
   height: 100%;
 }
 
-.gpt3__blog-container_article-content {
+.hp__blog-container_article-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -34,7 +34,7 @@ elements surrounding the image are adjusted after it has loaded. */
   height: 100%;
 }
 
-.gpt3__blog-container_article-content p {
+.hp__blog-container_article-content p {
   font-family: var(--font-family);
   font-size: 11.65px;
   font-weight: 700;
@@ -43,7 +43,7 @@ elements surrounding the image are adjusted after it has loaded. */
   color: #fff;
 }
 
-.gpt3__blog-container_article-content h3 {
+.hp__blog-container_article-content h3 {
   font-family: var(--font-family);
   font-size: 25.11px;
   font-weight: 800;
@@ -54,13 +54,13 @@ elements surrounding the image are adjusted after it has loaded. */
   cursor: pointer;
 }
 
-.gpt3__blog-container_article-content p:last-child {
+.hp__blog-container_article-content p:last-child {
   cursor: pointer;
 }
 
 
 @media screen and (max-width: 550px) {
-  .gpt3__blog-container_article-content h3 {
+  .hp__blog-container_article-content h3 {
       font-size: 18px;
       line-height: 25p;
   }

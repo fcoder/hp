@@ -7,14 +7,14 @@ const Brand = () => (
     </div>
 */
 
-.hs__division {         /* See above jsx code  was gpt3__brand*/
+.hs__division {         /* See above jsx code  was hp__brand*/
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
 
-.hs__division div {     /* See above jsx code, multiple <div>s inside __gpt3__brand */
+.hs__division div {     /* See above jsx code, multiple <div>s inside __hp__brand */
   flex: 1;
   max-width: 150px;
   min-width: 120px;

@@ -22,21 +22,21 @@ Makes the flex item flexible (glow = <positive num, shrink=1 and sets the flex b
 */
 /*  Sign In and Sign Out */
 /* Up to this point, don't see a good mobile navbor*/
-.gpt3__navbar {
+.hp__navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2rem 6rem;
 }
 
-.gpt3__navbar-links {
+.hp__navbar-links {
     flex: 1;
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
-.gpt3__navbar-links_logo {
+.hp__navbar-links_logo {
     margin-right: 2rem;
     /* Always specify both the height and width attributes for images. If height and width are set,
     the space required for the image is reserved when the page is loaded. However, without these
@@ -52,10 +52,10 @@ Makes the flex item flexible (glow = <positive num, shrink=1 and sets the flex b
 }
 
 //                Links In Middle Of Navbar      Links in DropDown
-//   display    .gpt3__navbar-links_container   .gpt3__navbar-menu
+//   display    .hp__navbar-links_container   .hp__navbar-menu
 // > 1050px:               flex                     none
 // < 1050px:               none                     flex
-.gpt3__navbar-links_container { // The flex for links in the middle of Navbar, > 1050px
+.hp__navbar-links_container { // The flex for links in the middle of Navbar, > 1050px
     display: flex;          // Will change flex to none if screen < 1050px
     flex-direction: row;
     p {
@@ -70,7 +70,7 @@ Makes the flex item flexible (glow = <positive num, shrink=1 and sets the flex b
     }
 }
 
-.gpt3__navbar-sign {                     /* sign is for sign in and sign out */
+.hp__navbar-sign {                     /* sign is for sign in and sign out */
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -99,7 +99,7 @@ Makes the flex item flexible (glow = <positive num, shrink=1 and sets the flex b
     }
 }
 
-.gpt3__navbar-menu_container {
+.hp__navbar-menu_container {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -140,7 +140,49 @@ Makes the flex item flexible (glow = <positive num, shrink=1 and sets the flex b
     }
 }
 
-.gpt3__navbar-menu {    // The menu icon in Navbar rendered only if screen < 1050p
+// TOSO: SAME AS .hp__navbar-menu_container ONLY min-width is 120px FOR MOBILES BELOW
+.hp__dropdown-menu_container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+  text-align: end;
+  background: var(--color-footer);
+  padding: 2rem;
+  position: absolute;
+  right: 0;
+  top: 80px; // Original 40px; changed to 80px so sign up dropdown won't cover the sign up button
+  margin: 1rem 2rem 0 0;
+  min-width: 320px;
+  border-radius: 5px;
+  border: solid red 1px; // YC
+  box-shadow: 0px 0px 5px rgba(0,0, 0,0.2);
+  p {                      // For "Sign up with a verifiable email and password"
+      color: $color_1;
+      font-family: $font-family_1;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 25px;
+      text-transform: capitalize;
+      cursor: pointer;
+      margin: 1rem 0;
+  }
+  button {
+      padding: 0.7rem;     // Will reduce to 0.5rem for mobile below
+      color: $color_1;
+      background: #FF4820;
+      font-family: $font-family_1;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 25px;
+      border-radius: 5px;
+      border: 0;
+      outline: none;
+      cursor: pointer;
+  }
+}
+
+.hp__navbar-menu {    // The menu icon in Navbar rendered only if screen < 1050p
     margin-left: 1rem;
     display: none;      // Show this menu only if screen < 1050px
     position: relative;
@@ -149,33 +191,33 @@ Makes the flex item flexible (glow = <positive num, shrink=1 and sets the flex b
     }
 }
 
-.gpt3__navbar-menu_container-links-sign {
+.hp__navbar-menu_container-links-sign {
     display: none;                   // Change none to block below for mobile
 }
 
 @media screen and (max-width: 1050px) {
-    .gpt3__navbar-links_container { // defined as display: flex for browser above
+    .hp__navbar-links_container { // defined as display: flex for browser above
         display: none;              // If >= 1050px, display by default  If < 1050px, no navbar links 
     }
-    .gpt3__navbar-menu {            //  Menu: Home, What is GPT3, Open AI...
+    .hp__navbar-menu {            //  Menu: Home, What is GPT3, Open AI...
         display: flex;               // See above, was none when screen > 1050px.
     }
 }
 
 @media screen and (max-width: 700px) {
-    .gpt3__navbar {          // Same as < 1050, but reduce padding from 2rem 6rem
+    .hp__navbar {          // Same as < 1050, but reduce padding from 2rem 6rem
         padding: 2rem 4rem;
     }
 }
 
 @media screen and (max-width: 550px) {
-    .gpt3__navbar {          // Same navbar, but reduce padding from to 2rem for all four
+    .hp__navbar {          // Same navbar, but reduce padding from to 2rem for all four
        padding: 2rem;
     }
-    .gpt3__navbar-sign {     // Sign for both Sign In & Sign Out, disappear only on mobile
-       display: none;        // Changes w/ .gpt3__navbar-menu_container-links-sign below
+    .hp__navbar-sign {     // Sign for both Sign In & Sign Out, disappear only on mobile
+       display: none;        // Changes w/ .hp__navbar-menu_container-links-sign below
     }
-    .gpt3__navbar-menu_container {
+    .hp__navbar-menu_container {
       top: 40px;             // Reduce top from 80px to 40px, was 20px before adding sign up dropdown
       min-width: 300px;
       margin: 2rem 0 0 0;
@@ -188,7 +230,22 @@ Makes the flex item flexible (glow = <positive num, shrink=1 and sets the flex b
         font-size: 15px;      // Reduce for font inside Sign In and Sign Up form
       }
     }
-    .gpt3__navbar-menu_container-links-sign {
+
+    .hp__dropdown-menu_container {
+      top: 40px;             // Reduce top from 80px to 40px, was 20px before adding sign up dropdown
+      min-width: 120px;      // Only difference from .hp__navbar-menu_container
+      margin: 2rem 0 0 0;
+      padding: 1rem;         // Reduce from 1.5rem to give more space contents of signin & signup forms
+      p {                    // Font of menu items in dropdown for mobiles
+        font-size: 15px;
+      }
+      button {
+        padding: 0.5rem;      // Make button in signin and signup forms narrower
+        font-size: 15px;      // Reduce for font inside Sign In and Sign Up form
+      }
+    }
+
+    .hp__navbar-menu_container-links-sign {
       display: block;        // Display dropdown for both links and signin/signout for mobile
     }
 }

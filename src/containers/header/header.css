@@ -1,9 +1,9 @@
-.gpt3__header {
+.hp__header {
   display: flex;            /* Will be row later ? */
   flex-direction: row;      /* Two items in the flex: Everthing else and the big head */
 }
 
-.gpt3__header-content {
+.hp__header-content {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -13,7 +13,7 @@
   margin-right: 5rem;
 }
 
-.gpt3__header-content h1 {
+.hp__header-content h1 {
   font-family: var(--font-family);
   font-weight: 800;
   font-size: 62px;
@@ -21,7 +21,7 @@
   letter-spacing: -0.04em;
 }
 
-.gpt3__header-content p {
+.hp__header-content p {
   font-family: var(--font-family);
   font-style: normal;
   font-weight: normal;
@@ -32,19 +32,19 @@
   margin-top: 1.5rem;
 }
 
-.gpt3__header-content__input {
+.hp__header-content__input {
   width: 100%;
   margin: 2rem 0 1rem;
 
   display: flex;
 }
 
-.gpt3__header-content__input input {
+.hp__header-content__input input {
   background: #052D56;
   border-radius: 5px 0px 0px 5px;
 }
 
-.gpt3__header-content__input input {
+.hp__header-content__input input {
   flex: 2;      /* A little wider */
   width: 100%;
   font-family: var(--font-family);
@@ -61,7 +61,7 @@
   border-bottom-right-radius: 5px;
 }
 
-.gpt3__header-content__input button {
+.hp__header-content__input button {
   flex: 0.6;                            /* Make the button take more space, wider */
   width: 100%;
   min-height: 50px;
@@ -80,7 +80,7 @@
   border-bottom-right-radius: 5px;
 }
 
-.gpt3__header-content__people {
+.hp__header-content__people {
   width: 100%;
   display: flex;         /* This makes 1600 people move to the right side of the people pictures */
   justify-content: flex-start;
@@ -94,12 +94,12 @@ the space required for the image is reserved when the page is loaded. However, w
 attributes, the browser does not know the size of the image, and cannot reserve the appropriate
 space to it. The effect will be that the page layout will change during loading (while the
 images load). */
-.gpt3__header-content__people img {
+.hp__header-content__people img {
   width: 181.79px;      /* Adjust people image size */
   height: 38px;
 }
 
-.gpt3__header-content__people p {  /* Style for the 1300 people sentence */
+.hp__header-content__people p {  /* Style for the 1300 people sentence */
   margin: 0 0 0 1rem;
   font-family: var(--font-family);
   font-weight: 500;
@@ -109,7 +109,7 @@ images load). */
   text-align: center;
 }
 
-.gpt3__header-image {  /* The big head AI */
+.hp__header-image {  /* The big head AI */
   flex: 1;
   display: flex;
   justify-content: center;
@@ -121,41 +121,41 @@ the space required for the image is reserved when the page is loaded. However, w
 attributes, the browser does not know the size of the image, and cannot reserve the appropriate
 space to it. The effect will be that the page layout will change during loading (while the
 images load). */
-.gpt3__header-image img {
+.hp__header-image img {
   width: 100%;
   height: 100%;
 }
 
 @media screen and (max-width: 1050px) {
-  .gpt3__header {
+  .hp__header {
     flex-direction: column;
   }
-  .gpt3__header-content {
+  .hp__header-content {
     margin: 0 0 3rem;
   }
 }
 
 @media screen and (max-width: 650px) {
-  .gpt3__header h1 {
+  .hp__header h1 {
     font-size: 48px;
     line-height: 60px;
   }
 
-  .gpt3__header p {
+  .hp__header p {
     font-size: 16px;
     line-height: 24px;
   }
 
-  .gpt3__header-content__people {
+  .hp__header-content__people {
     flex-direction: column;
   }
 
-  .gpt3__header-content__people p {
+  .hp__header-content__people p {
     margin: 0;   /* centered */
   }
 
-  .gpt3__header-content__input input,
-  .gpt3__header-content__input button {
+  .hp__header-content__input input,
+  .hp__header-content__input button {
     font-size: 16px;
     line-height: 24px;
   }
@@ -163,18 +163,18 @@ images load). */
 
 
 @media screen and (max-width: 490px) {
-  .gpt3__header h1 {
+  .hp__header h1 {
     font-size: 36px;
     line-height: 48px;
   }
 
-  .gpt3__header p {
+  .hp__header p {
     font-size: 14px;
     line-height: 24px;
   }
 
-  .gpt3__header-content__input input,
-  .gpt3__header-content__input button {
+  .hp__header-content__input input,
+  .hp__header-content__input button {
     font-size: 12px;
     line-height: 16px;
   }

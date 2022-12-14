@@ -1,4 +1,4 @@
-.gpt3__footer {
+.hp__footer {
   display: flex;
   flex-direction: column;      /* colume direction top: heading, middle: btn, bottom: links*/
   justify-content: center;    /* btin is a nested row flex with only one <p> in the middle */
@@ -7,7 +7,7 @@
   background: var(--color-footer);
 }
 
-.gpt3__footer-heading {
+.hp__footer-heading {
   width: 100%;
   text-align: center;
 
@@ -17,14 +17,14 @@
      padding-top: 2rem; */
 }
 
-.gpt3__footer-heading h1 {
+.hp__footer-heading h1 {
   font-family: var(--font-family);
   font-weight: 800;
   font-size: 52px; /* 64px; */
   line-height: 75px;
 }
 
-.gpt3__footer-btn {
+.hp__footer-btn {
   /* display: flex;            /*  This is flex has no effec seems not to be necessary */
   justify-content: center;
   align-items: center;
@@ -37,7 +37,7 @@
   cursor: pointer;
 }
 
-.gpt3__footer-btn p {         /* The button is actually this <p>, not clickable, style this "button" */
+.hp__footer-btn p {         /* The button is actually this <p>, not clickable, style this "button" */
   font-size: 18px;
   font-family: var(--font-family);
   line-height: 21px;
@@ -45,7 +45,7 @@
   word-spacing: 2px;
 }
 
-.gpt3__footer-links {
+.hp__footer-links {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -56,37 +56,37 @@
   text-align: left;
 }
 
-.gpt3__footer-links div {
+.hp__footer-links div {
   width: 250px;
   margin: 1rem;
 }
 
-.gpt3__footer-links_logo {
+.hp__footer-links_logo {
   display: flex;
   flex-direction: column;
 }
 
-.gpt3__footer-links_logo img {
+.hp__footer-links_logo img {
   width: 118px;
   height: 30px;
 
   margin-bottom: 1rem;
 }
 
-.gpt3__footer-links_logo p {
+.hp__footer-links_logo p {
   font-family: var(--font-family);
   font-size: 12px;
   line-height: 15px;
   color: #fff;
 }
 
-.gpt3__footer-links_div {
+.hp__footer-links_div {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
 }
 
-.gpt3__footer-links_div h4 {
+.hp__footer-links_div h4 {
   font-size: 14px;
   line-height: 17px;
   font-family: var(--font-family);
@@ -95,7 +95,7 @@
   margin-bottom: 0.9rem;
 }
 
-.gpt3__footer-links_div p {
+.hp__footer-links_div p {
   font-size: 12px;
   line-height: 15px;
   font-family: var(--font-family);
@@ -105,13 +105,13 @@
   cursor: pointer;
 }
 
-.gpt3__footer-copyright {
+.hp__footer-copyright {
   margin-top: 2rem;
   text-align: center;
   width: 100%;
 }
 
-.gpt3__footer-copyright p {
+.hp__footer-copyright p {
   font-size: 12px;
   font-family: var(--font-family);
   line-height: 15px;
@@ -119,30 +119,30 @@
 }
 
 @media screen and (max-width: 850px) {
-  .gpt3__footer-heading h1 {
+  .hp__footer-heading h1 {
       font-size: 44px;
       line-height: 50px;
   }
 }
 
 @media screen and (max-width: 550px) {
-  .gpt3__footer-heading h1 {
+  .hp__footer-heading h1 {
       font-size: 34px;
       line-height: 42px;
   }
 
-  .gpt3__footer-links div {
+  .hp__footer-links div {
       margin: 1rem 0;
   }
 
-  .gpt3__footer-btn p {
+  .hp__footer-btn p {
       font-size: 14px;
       line-height: 20px;
   }
 }
 
 @media screen and (max-width: 400px) {
-  .gpt3__footer-heading h1 {
+  .hp__footer-heading h1 {
       font-size: 27px;
       line-height: 38px;
   }

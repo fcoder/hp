@@ -23,12 +23,12 @@ const featuresData = [
 
 const Features = () => (
   // section__padding is defined in App.css as .section__padding { padding: 4rem 6rem; }
-  <div className="gpt3__features section__padding" id="products">
-    <div className="gpt3__features-heading">
+  <div className="hp__features section__padding" id="products">
+    <div className="hp__features-heading">
       <h1 className="gradient__text">The Future is Now and You Just Need to Realize It. Step into Future Today. & Make it Happen.</h1>
       <p>Request Early Access to Get Started</p>
     </div>
-    <div className="gpt3__features-container">
+    <div className="hp__features-container">
       {featuresData.map((item, index) => (
         <Feature title={item.title} text={item.text} key={item.title + index} />
       ))}
