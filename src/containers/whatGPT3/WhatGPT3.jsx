@@ -16,7 +16,7 @@ const WhatGPT3 = () => (
 
     <div className="gpt3__whatgpt3-container">  {/* display:flax, row, wrap */}
       <Feature title="Who We Are" text="Our mission is to be the leading vertically integrated provider of high performance optical subsystems for the communication market from chip fabrication to subsystems" />
-      <Feature title="What Wo Do" text="Provode 2.5Gb/s and 10Gb/s high performance solution in the long haul. metro and access markets. Quick product cycle. Trusted Pedigree." />
+      <Feature title="What We Do" text="Provode 2.5Gb/s and 10Gb/s high performance solution in the long haul. metro and access markets. Quick product cycle. Trusted Pedigree." />
       <Feature title="Where We Are" text="R&D and Manufacturing in east and west coasts of the US and overseas. " />
     </div>
 

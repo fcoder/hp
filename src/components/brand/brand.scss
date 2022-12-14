@@ -1,20 +1,20 @@
 /*
 The jsx code is simple:
 const Brand = () => (
-  <div className="gpt3__brand section__padding">
+  <div className="hs__division section__padding">
     <div>
       <img src={google} alt="google" />
     </div>
 */
 
-.gpt3__brand {         /* See above jsx code */
+.hs__division {         /* Was gpt3__brand.  See  above jsx code */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
 
-.gpt3__brand div {     /* See above jsx code, multiple <div>s inside __gpt3__brand */
+.hs__division div {     /* See above jsx code, multiple <div>s inside hs__division  */
   flex: 1;
   max-width: 190px; // 150px;
   min-width: 120px;
